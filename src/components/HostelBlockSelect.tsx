@@ -6,6 +6,7 @@ import {
   SelectContent,
   SelectItem,
   SelectLabel,
+  SelectGroup,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
@@ -33,12 +34,14 @@ const HostelBlockSelect = ({ value, onChange }: HostelBlockSelectProps) => {
           <SelectValue placeholder="Choose your block" />
         </SelectTrigger>
         <SelectContent className="bg-white z-50 animate-scale-in shadow-xl border border-food-orange">
-          <SelectLabel>Hostel Blocks</SelectLabel>
-          {[...Array(12)].map((_, i) => (
-            <SelectItem value={`C${i + 1}`} key={i + 1} className="hover:bg-food-orange/20">
-              C{i + 1}
-            </SelectItem>
-          ))}
+          <SelectGroup>
+            <SelectLabel>Hostel Blocks</SelectLabel>
+            {[...Array(12)].map((_, i) => (
+              <SelectItem value={`C${i + 1}`} key={i + 1} className="hover:bg-food-orange/20">
+                C{i + 1}
+              </SelectItem>
+            ))}
+          </SelectGroup>
         </SelectContent>
       </Select>
       {selectedBlock && (
