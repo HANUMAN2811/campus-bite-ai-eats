@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
@@ -8,6 +7,7 @@ import OutletCard from "@/components/OutletCard";
 import { getPopularFoods } from "@/data/foodData";
 import { outlets } from "@/data/foodData";
 import { Link } from "react-router-dom";
+import HostelBlockSelect from "@/components/HostelBlockSelect";
 
 const Index = () => {
   const popularFoods = getPopularFoods();
@@ -47,6 +47,13 @@ const Index = () => {
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Hostel Block Selection Section */}
+        <section className="py-8 bg-white flex items-center justify-center">
+          <div className="w-full max-w-lg">
+            <HostelBlockSelect />
           </div>
         </section>
 
